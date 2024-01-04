@@ -3,7 +3,7 @@ node {
     checkout scm
   }
   stage('SonarQube Analysis') {
-    def scannerHome = tool 'sonar-qubes-scanner';
+    def scannerHome = tool 'jenkins_sonar_test_lts';
     withSonarQubeEnv() {
       sh "${scannerHome}/bin/sonar-scanner"
     }
